@@ -20,7 +20,7 @@ folder_diablo = 'Diablo III wallpapers'
 Dir.mkdir(folder_diablo) unless Dir.exist? folder_diablo
 Dir.chdir(folder_diablo)
 
-regex = /var indices = \[((?:"wallpaper\d{3}",? ?)+)\];/
+regex = /var indices = \[((?:"wallpaper\d+",? ?)+)\];/
 images = resp.body.match(regex)[1].split(', ').map { |img| img.gsub(/"/, '') }
 
 images.each do |img|
