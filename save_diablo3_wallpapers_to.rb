@@ -1,13 +1,13 @@
 require 'net/http'
 
 # save wallpapers from http://eu.battle.net/d3/en/media/wallpapers/
-diablo_folder = ARGV[0]
-if diablo_folder.nil?
+folder_target = ARGV[0]
+if folder_target.nil?
   puts 'provide an location as argument'
   exit
 end
 
-Dir.chdir(diablo_folder)
+Dir.chdir(folder_target)
 
 uri = URI('http://eu.battle.net/d3/en/media/wallpapers/')
 resp = Net::HTTP.get_response(uri)
